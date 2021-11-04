@@ -33,10 +33,10 @@ app.post('/user', (req, res) => {
   if (!req.body.name ) {
     res.status(400).send("invalid data");
   } else {
-    users.push([
+    users.push(
        req.body.name,
       
-    ])
+    )
 
     res.send("users created");
   }
@@ -48,12 +48,7 @@ app.put('/user/:id', (req, res) => {
     if (req.body.name) {
       users[req.params.id].name = req.body.name
     }
-    if (req.body.email) {
-      users[req.params.id].email = req.body.email
-    }
-    if (req.body.address) {
-      users[req.params.id].address = req.body.address
-    }
+    
 
     res.send(users[req.params.id])
 
